@@ -7,8 +7,16 @@
     </Application.Styles>
     
     <Application.Resources>
-        <x:String x:Key="Title">Менеджер аккаунтов</x:String>
-        <x:String x:Key="Title_AuthWindow">Авторизация</x:String>
-        <x:String x:Key="Title_MainWindow">Учёт аккаунтов</x:String>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <x:String x:Key="Title">Менеджер аккаунтов</x:String>
+                    <x:String x:Key="Title_AuthWindow">Авторизация</x:String>
+                    <x:String x:Key="Title_MainWindow">Учёт аккаунтов</x:String>
+                </ResourceDictionary>
+                
+                <ResourceInclude Source="Icons.axaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

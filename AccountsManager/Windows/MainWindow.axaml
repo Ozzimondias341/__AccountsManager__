@@ -36,12 +36,12 @@
                 <TextBox x:Name="Input_FirstName"/>
             </StackPanel>-->
             <c:InputComponent x:Name="Input_Id"
-                              Label="ID"
+                              LabelText="ID"
                                IsReadOnly="True"/>
             <c:InputComponent x:Name="Input_LastName"
-                              Label="Фамилия" />
+                              LabelText="Фамилия" />
             <c:InputComponent x:Name="Input_FirstName"
-                              Label="Имя" />
+                              LabelText="Имя" />
 
             <StackPanel Orientation="Horizontal">
                 <Button Content="Сохранить" />

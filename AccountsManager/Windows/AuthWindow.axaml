@@ -11,6 +11,10 @@
             <Binding Source="{StaticResource ResourceKey=Title_AuthWindow}" />
         </MultiBinding>
     </Window.Title>
+    
+    <Window.Styles>
+        <StyleInclude Source="../BaseStyles.axaml" />
+    </Window.Styles>
 
     <StackPanel Orientation="Vertical">
         <TextBlock Text="{Binding Source={StaticResource ResourceKey=Title_AuthWindow}}" />
@@ -27,16 +31,24 @@
                 <TextBox x:Name="Input_Password"/>
             </StackPanel>-->
             <c:InputComponent x:Name="Input_Login"
-                              Label="Логин"
-                              Placeholder="Введите логин"/>
+                              LabelText="Логин"
+                              LabelIcon="{StaticResource ResourceKey=person_accounts_regular}"
+                              Placeholder="Введите логин"
+                              TextInput="Input_OnTextInput"/>
             <c:InputComponent x:Name="Input_Password"
-                              Label="Пароль"
-                              Placeholder="Введите пароль"/>
+                              LabelText="Пароль"
+                              LabelIcon="{StaticResource ResourceKey=password_regular}"
+                              Placeholder="Введите пароль"
+                              TextInput="Input_OnTextInput"/>
 
             <StackPanel Orientation="Horizontal">
-                <Button Content="Войти"
+                <Button x:Name="Button_Login"
+                 Content="Войти"
+                        Classes="login"
                         Click="Button_Auth_OnClick" />
-                <Button Content="Отмена"
+                <Button x:Name="Button_Cancel"
+                        Content="Отмена"
+                        Classes="cancel"
                         Click="Button_Cancel_OnClick" />
             </StackPanel>
 

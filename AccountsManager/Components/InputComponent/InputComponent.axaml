@@ -11,12 +11,20 @@
     <Grid ColumnDefinitions="*, 3*"
           DataContext="{Binding ElementName=Component}">
         <Label Target="{Binding ElementName=Input}"
-               Content="{Binding Path=Label, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
-               Grid.Column="0"/>
+               Grid.Column="0">
+            <Grid ColumnDefinitions="Auto, *">
+                <PathIcon Data="{Binding Path=LabelIcon, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                          Width="16"
+                          Grid.Column="0"/>
+                <TextBlock Text="{Binding Path=LabelText, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                           Grid.Column="1"/>
+            </Grid>
+        </Label>
         <TextBox x:Name="Input"
                  Text="{Binding Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  Watermark="{Binding Path=Placeholder, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                  IsReadOnly="{Binding Path=IsReadOnly, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                 TextInput="OnTextInput"
                  Grid.Column="1"/>
     </Grid>
 </UserControl>
